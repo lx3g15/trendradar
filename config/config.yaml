@@ -55,28 +55,102 @@ schedule:
 platforms:
   enabled: true                         # 是否启用热榜平台抓取
   sources:
+    # - id: "toutiao"
+    #   name: "今日头条"
+    # - id: "baidu"
+    #   name: "百度热搜"
+    # - id: "wallstreetcn-hot"
+    #   name: "华尔街见闻"
+    # - id: "thepaper"
+    #   name: "澎湃新闻"
+    # - id: "bilibili-hot-search"
+    #   name: "bilibili 热搜"
+    # - id: "cls-hot"
+    #   name: "财联社热门"
+    # - id: "ifeng"
+    #   name: "凤凰网"
+    # - id: "tieba"
+    #   name: "贴吧"
+    # - id: "weibo"
+    #   name: "微博"
+    # - id: "douyin"
+    #   name: "抖音"
+    # - id: "zhihu"
+    #   name: "知乎"
+    
+    # === 综合新闻媒体类 ===
     - id: "toutiao"
       name: "今日头条"
-    - id: "baidu"
-      name: "百度热搜"
-    - id: "wallstreetcn-hot"
-      name: "华尔街见闻"
+    # - id: "baidu"
+    #   name: "百度热搜"
     - id: "thepaper"
       name: "澎湃新闻"
-    - id: "bilibili-hot-search"
-      name: "bilibili 热搜"
-    - id: "cls-hot"
-      name: "财联社热门"
     - id: "ifeng"
       name: "凤凰网"
-    - id: "tieba"
-      name: "贴吧"
+    - id: "cankaoxiaoxi"
+      name: "参考消息"
+    - id: "sputniknewscn"
+      name: "卫星通讯社"
+    - id: "zaobao"
+      name: "联合早报"
+    - id: "mktnews"
+      name: "MKT新闻"
+    # - id: "kaopu"
+    #   name: "靠谱新闻"
+
+    # === 财经投资类 ===
+    - id: "wallstreetcn-hot"
+      name: "华尔街见闻 最热"
+    - id: "wallstreetcn-quick"
+      name: "华尔街见闻 快讯"
+    - id: "wallstreetcn-news"
+      name: "华尔街见闻 最新"
+    - id: "cls-hot"
+      name: "财联社热门"
+    - id: "gelonghui"
+      name: "格隆汇"
+    - id: "xueqiu"
+      name: "雪球"
+    # - id: "jin10"
+    #   name: "金十数据"
+    # - id: "fastbull"
+    #   name: "快讯通"
+
+    # === 社交/短视频/娱乐类 ===
     - id: "weibo"
       name: "微博"
     - id: "douyin"
       name: "抖音"
-    - id: "zhihu"
-      name: "知乎"
+    # - id: "bilibili-hot-search"
+    #   name: "bilibili 热搜"
+    # - id: "tieba"
+    #   name: "贴吧"
+    # - id: "zhihu"
+    #   name: "知乎"
+    # - id: "hupu"
+    #   name: "虎扑"
+
+    # === 科技类平台 ===
+    # - id: "ithome"
+    #   name: "IT之家"
+    - id: "juejin"
+      name: "掘金"
+    - id: "github"
+      name: "GitHub"
+    - id: "hackernews"
+      name: "Hacker News"
+    # - id: "solidot"
+    #   name: "Solidot"
+    # - id: "v2ex"
+    #   name: "V2EX"
+    # - id: "nowcoder"
+    #   name: "牛客网"
+    # - id: "pcbeta"
+    #   name: "远景论坛"
+    # - id: "sspai"
+    #   name: "少数派"
+    # - id: "producthunt"
+    #   name: "ProductHunt"
 
 
 
@@ -116,17 +190,37 @@ rss:
     - id: "hacker-news"
       name: "Hacker News"
       url: "https://hnrss.org/frontpage"
-      # max_age_days: 1               # 示例：只推送1天内的文章
+      max_age_days: 2               # 示例：只推送1天内的文章
 
-    - id: "ruanyifeng"
-      name: "阮一峰的网络日志"
-      url: "http://www.ruanyifeng.com/blog/atom.xml"
-      # max_age_days: 7               # 示例：推送7天内的文章（更新较慢的博客）
+    # - id: "ruanyifeng"
+    #   name: "阮一峰的网络日志"
+    #   url: "http://www.ruanyifeng.com/blog/atom.xml"
+    #   # max_age_days: 7               # 示例：推送7天内的文章（更新较慢的博客）
     
+    # - id: "yahoo-finance"
+    #   name: "雅虎财经"
+    #   url: "https://finance.yahoo.com/news/rssindex"
+    #   enabled: false                  # 禁用
+
     - id: "yahoo-finance"
       name: "雅虎财经"
       url: "https://finance.yahoo.com/news/rssindex"
-      enabled: false                  # 禁用
+      max_age_days: 2
+
+    - id: "CNN"
+      name: "CNN"
+      url: "http://rss.cnn.com/rss/edition.rss"
+      max_age_days: 2
+
+    - id: "BBC"
+      name: "BBC"
+      url: "http://feeds.bbci.co.uk/news/rss.xml"
+      max_age_days: 2
+
+    - id: "toutiao-hk"
+      name: "頭條日報"
+      url: "https://hd.stheadline.com/rss/news/daily/"
+      max_age_days: 2
 
     # 自定义源示例
     # - id: "custom-feed"
