@@ -577,7 +577,7 @@ custom:
       workday:
         periods: ["morning_briefing", "noon_update", "closing_summary"]
       weekend:
-        periods: ["noon_update", "closing_summary"] 
+        periods: ["morning_briefing", "closing_summary"] 
 
     week_map:
       1: "workday"                 # 周一 → 工作日计划
