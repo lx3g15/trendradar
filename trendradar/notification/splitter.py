@@ -668,12 +668,25 @@ def split_content_into_batches(
             current_batch = test_content
             current_batch_has_content = True
         else:
-            # 当前批次容纳不下，开启新批次
+            # # 当前批次容纳不下，开启新批次
+            # if current_batch_has_content:
+            #     batches.append(current_batch + base_footer)
+            # # AI 内容可能很长，需要考虑是否需要进一步分割
+            # ai_with_header = base_header + ai_content
+            # current_batch = ai_with_header
+            # current_batch_has_content = True
+
+            # 20260316 新增AI内容进行分割
             if current_batch_has_content:
                 batches.append(current_batch + base_footer)
-            # AI 内容可能很长，需要考虑是否需要进一步分割
-            ai_with_header = base_header + ai_content
-            current_batch = ai_with_header
+            ai_content_to_list = ai_content.split('\n')
+            ai_conten_sub_part_size = len(ai_content_to_list)//3
+            ai_with_header_part_1 = base_header + '\n'.join(ai_content_to_list[:ai_conten_sub_part_size])
+            batches.append(ai_with_header_part_1 + base_footer)
+            ai_with_header_part_2 = base_header + '\n'.join(ai_content_to_list[ai_conten_sub_part_size:ai_conten_sub_part_size*2])
+            batches.append(ai_with_header_part_2 + base_footer)
+            ai_with_header_part_3 = base_header + '\n'.join(ai_content_to_list[ai_conten_sub_part_size*2:])
+            current_batch = ai_with_header_part_3
             current_batch_has_content = True
 
         return current_batch, current_batch_has_content, batches
