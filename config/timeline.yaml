@@ -371,8 +371,8 @@ presets:
     periods:
       morning_briefing:
         name: "早"
-        start: "08:00"
-        end: "10:00"
+        start: "06:00"
+        end: "08:00"
         analyze: true              # AI 分析当前热点
         ai_mode: "current"         # AI 分析当前榜单
         push: true                 # 到岗后看当前热点
@@ -381,8 +381,8 @@ presets:
 
       noon_update:
         name: "中"
-        start: "14:00"
-        end: "16:00"
+        start: "10:00"
+        end: "12:00"
         analyze: true              # AI 分析当前热点
         ai_mode: "current"         # AI 分析当前榜单
         push: true                 # 午间推送当前在榜热点
@@ -391,8 +391,8 @@ presets:
 
       closing_summary:
         name: "晚"
-        start: "20:00"
-        end: "23:00"
+        start: "18:00"
+        end: "20:00"
         analyze: true              # AI 做全天汇总分析
         ai_mode: "daily"           # AI 也分析全天内容
         push: true                 # 下班前推送当日完整汇总
